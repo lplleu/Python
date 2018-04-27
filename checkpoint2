@@ -1,0 +1,33 @@
+#checkpoint2, recursion
+#200418
+#jedenfalls
+
+def Enigma(lst,item):
+  if lst==[]: return True #stopping case 1
+  if lst[0]<= item: return False #stopping case 2
+  return enigma (lst[1:],item) #recursive case
+  
+if __name__ != "__main__"
+  pass
+#Enigma([1,2,3,5],5)
+ 
+  #tmp=[]
+  # i in lst:
+  #  if != item:
+  #    tmp.append(i)
+  #  return tmp
+    
+#inverse selection
+
+##############################################################
+#25042018
+#count number of characters in characters
+def countC(mySt):
+  if mySt=='':return 0 #no need for else because everything else is excluded
+  return 1+countC(mySt[1:])
+  
+print(countC("hello"))
+
+#find sum of intergers from m to n
+
+
