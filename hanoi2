@@ -1,0 +1,30 @@
+#25042018
+#jedenfalls
+#count number of characters in characters
+
+def countC(mySt):
+  if mySt=='':return 0 #no need for else because everything else is excluded
+  return 1+countC(mySt[1:])
+  
+print(countC("hello"))
+
+#search and replace all characters in a string
+def searchReplace(text,original,new):
+  if text == '':  #stopping case
+    return ''
+  if text[0]==original: #check situation with first character
+    return new+searchReplace(text[1:],original,new)
+  return text[0]+searchReplace(text[1:],original,new)
+    
+print(searchReplace("hello","l","b"))
+
+#find sum of intergers from m to n
+
+#Towers of hanoi
+#you need to move stack of discs one at a time from spindle a to spindle c moving only one disc at a time, you are never allowed to put a big disc on small disc, there only 3 spindles, with one fully stacked and the rest not
+
+#rVPuzFYifYE
+
+#25042018
+#jedenfalls
+#hanoi
