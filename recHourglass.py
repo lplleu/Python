@@ -2,9 +2,6 @@
 #29-04-2018
 #pyramid, finally.
 
-#motho = "mothowachaba"
-#print(motho[0:1])
-
 def hourglass(x):
   if len(x)==0:
     pass
