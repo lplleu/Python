@@ -8,6 +8,6 @@ def hanoi(n,source,spare,destination):
 #print what to do
 hanoi(5,'a','b','c')
 
-#recursive solved this is so few lines!!!  -vs while or for loop
+#recursive solved this is so few lines!!!  -vs while or for loop (iteratively)
 
 #write recursive code to convert...
