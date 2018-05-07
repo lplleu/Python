@@ -2,7 +2,7 @@
 #07-May-2018
 #exception error
 
-#types of errors: IOError, NameError, TypeError, ValueError, ZeroDivisionError, IndexError ... [...docs.python.org/y3k/library/exceptions.html]
+#types of errors: IOError, NameError, TypeError, ValueError, ZeroDivisionError, IndexError [http://docs.python.org/y3k/library/exceptions.html]
 
 try:
   #x=50/0
