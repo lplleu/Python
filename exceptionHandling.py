@@ -2,7 +2,7 @@
 #07-May-2018
 #exception error
 
-#types of errors: IOError, NameError, 
+#types of errors: IOError, NameError, TypeError, ValueError, ZeroDivisionError, IndexError ... [...python.org/y3k/library/exceptions.html]
 
 try:
   #x=50/0
@@ -19,5 +19,5 @@ except IOError:
   print("It seems that the file",filename,"does not exist.")
 except:
   print("Some other error occurred!")
-finally:
+finally: #this will happen whether or not an error occurred
   print("Executing finally clause")
