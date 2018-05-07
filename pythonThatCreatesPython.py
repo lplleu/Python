@@ -23,3 +23,5 @@ for country in countries:
   line2="print('Hello"+country+"!')"
   print(line2,file=c_file)
   c_file.close()
+
+  #I/O means InputOutput, this is relevant for error interpretation
