@@ -14,7 +14,8 @@ while not fileOK:
                 
         #clean up data
         for i in range(len(data)):
-            data[i]=data[i].strip('\n')     
+            data[i]=data[i].strip('\n')
+            #data[i]=eval(data[i])
    
         print(data)
         fileOK=True
