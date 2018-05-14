@@ -11,6 +11,11 @@ while not fileOK:
         filename=input("Type in file name:\n")
         dataF=open(filename,'r')
         data = dataF.readlines()
+                
+        #clean up data
+        for i in range(len(data)):
+            data[i]=data[i].strip('\n')     
+   
         print(data)
         fileOK=True
         dataF.close()
