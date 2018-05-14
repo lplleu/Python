@@ -2,6 +2,9 @@
 #14-05-2018
 #outputFirstLine with error exceptions
 
+#import os.path
+#if os.path.isfile(filename)
+
 fileOK=False
 while not fileOK:
     try:
