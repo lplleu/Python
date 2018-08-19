@@ -1,0 +1,114 @@
+#jedenfalls
+
+#19 August 2018
+
+#rock paper scissors tournament; 
+
+
+
+#initiated using input 'go'
+
+#the game is between 2 players (player 1 and player 2)
+
+#initially they play for 5 rounds
+
+#after each round the results are displayed, including how each chose
+
+#if it is a tie then they go for sudden death
+
+#print congratulations message to the winner
+
+
+
+import random
+
+
+
+#start 
+
+
+
+options = ["rock",
+"paper",
+"scissors"]
+
+
+
+def whoWins(xi,yi):
+
+if xi==yi:
+
+print =
+"draw"
+
+elif xi=="rock"
+and yi=="paper":
+
+print =
+"y wins"
+
+elif (xi=="rock")&(yi=="scissors"):
+
+print =
+"x wins"
+
+# elif xi=="scissors"&yi=="paper":
+
+# print = "x wins"
+
+# elif xi=="scissors"&yi=="rock":
+
+# print = "y wins"
+
+# elif xi=="paper"&yi=="rock":
+
+# print = "x wins"
+
+# elif xi=="paper"&yi=="scissors":
+
+# print = "y wins"
+
+else:
+
+print =
+"unknown"
+
+
+
+
+
+def play(x,y):
+
+#if x == r and y == p
+
+# if x=="rock":
+
+print("x played",x,", y played",y,"\n")
+
+#whoWins(x,y)
+
+
+
+n = 1
+
+
+
+while n<6:
+
+i = random.randint(1,2)
+
+j = random.randint(1,2)
+
+play(options[i],options[j])
+
+n+=1
+
+
+
+
+
+
+
+
+
+
