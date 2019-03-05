@@ -6,7 +6,7 @@ def on(j):
 
     #why is he following not working?????
 
-    numbers[j]==numbers[j]-4
+    numbers[j]=numbers[j]
     print(numbers[j])
     pass
   else:
