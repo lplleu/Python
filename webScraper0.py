@@ -1,3 +1,7 @@
+#web scraping and writing to csv
+#11_March_2019
+#jedenfalls
+
 import bs4
 import requests
 from bs4 import BeautifulSoup
