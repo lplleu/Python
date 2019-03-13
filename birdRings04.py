@@ -1,5 +1,5 @@
 numbers = [0,0,0,0]
-
+###
 def on(j):
   if numbers[j]==4:
 
