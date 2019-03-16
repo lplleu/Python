@@ -1,10 +1,8 @@
-# reset n+1, and increment until 4 >> later will do it in reverse
-# 15_March_19
-# jedenfalls
-
-# output all possible combinations/permutations of a 4 colour
+# output all possible combinations/permutations of a 4 colour [answer should be 256]
 # 15 March 19
 # jedenfalls
+
+#for next time (17 March) try it in reverse. [at the moment this gives 122 combinations]
 
 numbers = [0,0,0,0]
 
