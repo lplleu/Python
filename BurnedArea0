@@ -1,0 +1,35 @@
+url <- "https://www.uni-trier.de/fileadmin/fb6/prof/FER/Downloads/Software/MODISFire/MODISFire_1.0.0.tar.gz"
+download.file(url, "MODISFire_1.0.0.tar.gz", method = "curl")
+
+install.packages("rgdal",dependencies=TRUE)
+
+install.packages("MODISFire_1.0.0.tar.gz", repos = NULL, type = "source",dependencies=TRUE)
+library(MODISFire)
+
+install.packages("MODIS", dependencies=TRUE)
+library(MODIS)
+
+MODISoptions(localArcPath = "img", quiet = FALSE)
+
+hdf <- getHdf(HdfName = c(
+  "https://e4ftl01.cr.usgs.gov//MODV6_Cmp_B/MOTA/MCD64A1.006/2019.04.01/MCD64A1.A2019091.h20v10.006.2019154200903.hdf",
+  "https://e4ftl01.cr.usgs.gov//MODV6_Cmp_B/MOTA/MCD64A1.006/2000.11.01/MCD64A1.A2000306.h20v10.006.2017012014334.hdf"  
+),forceDownload=T)
+
+hdf
+
+##
+list_files_hdf=tail(list.files(".","hdf",full.names = F),length(last_dir))
+files_tif=paste0("hdfs",gsub(".hdf",".tif",list_files_hdf))
+
+tfs = runGdal("MCD64A1", tileH = 20, tileV = 11, forceDownload=TRUE
+              , begin = "2017001", end = "2017002"
+              , SDSstring = "10100", job = "burnedArea",localArcPath="pics", outDirPath="pics", 
+              outProj="+proj=utm +zone=34 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+
+tfs
+##
+
+mydir1 <- 'img'
+mydir2 <- 'output'
+mfBURNEDAREA(mydir1, mydir2)
