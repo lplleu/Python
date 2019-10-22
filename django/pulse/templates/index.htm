@@ -1,0 +1,39 @@
+{% extends 'pulse/base.htm' %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+        <h1>DEA Maun</h1>
+          <p>Project Briefs</p>
+
+          {% if latest_brief_list %}
+              <table>
+                  <tr>
+                         <th>title</th>
+                         <th>sector</th>
+                         <th>developer</th>
+                         <th>category</th>
+                  </tr>
+                  <tbody>
+              {% for brief in latest_brief_list %}
+                  <tr>
+                         <td><a href="/pulse/{{ brief.brief_id }}/">{{ brief.brief_id }} {{ brief.title }}</a></td>
+                         <td>{{ brief.sector }}</td>
+                         <td>{{ brief.developer }}</td>
+                         <td>{{ brief.category }}</td>
+
+                  </tr>
+              {% endfor %}
+                  </tbody>
+              </table>
+          {% else %}
+              <p>No briefs are available.</p>
+          {% endif %}
+
+        </div>
+    </div>  
+</div>
+
+{% endblock %}

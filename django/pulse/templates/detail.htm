@@ -1,0 +1,24 @@
+{% extends 'pulse/base.htm' %}
+
+{% block content %}
+  <h1>title: {{ brief_details.title }}</h1>
+  chronicle of events
+  {% if brief_details %}
+    <ul>
+        <li>{{ brief_details.reference }}</li>
+        <li><strong>{{ brief_details.title }}</strong> {{ brief_details.locationx }} by {{ brief_details.developer }}</li>
+        <li>{{ brief_details.recommend }}</li>
+        <li>{{ brief_details.sector }}</li>
+        <li>received {{ brief_details.received }}</li>
+        <li>authorised {{ brief_details.exempted }}</li>
+        <li>ToR approved {{ brief_details.tor }}</li>
+        <li>EIA approved {{ brief_details.approved }}</li>
+        <li>sector: {{ brief_details.sector2 }} ({{ brief_details.category }})</li>
+    </ul>
+  {% else %}
+     <p>No details are available.</p>
+  {% endif %}
+
+  <a href="#" onclick="close_window();return false;">close</a><p>
+  <a href="../">back</a>
+{% endblock %}

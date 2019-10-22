@@ -1,0 +1,25 @@
+{% extends 'pulse/base.htm' %}
+
+{% block content %}
+  <h1>title:</h1>
+  {% if brief_details %}
+    <ul>
+    {% for briefi in brief_details %}
+        <li>{{ brief.reference }}</li>
+        <li><strong>{{ brief.title }}</strong> {{ brief.locationx }} by {{ brief.developer }}</li>
+        <li>{{ brief.recommend }}</li>
+        <li>{{ brief.sector }}</li>
+        <li>received {{ brief.received }}</li>
+        <li>authorised {{ brief.exempted }}</li>
+        <li>ToR approved {{ brief.tor }}</li>
+        <li>EIA approved {{ brief.approved }}</li>
+        <li>sector: {{ brief.sector2 }} ({{ brief.category }})</li>
+    {% endfor %}
+    </ul>
+  {% else %}
+     <p>No details are available.</p>
+  {% endif %}
+  
+
+  <a href="../pulse">back</a>
+{% endblock %}

@@ -1,0 +1,25 @@
+
+
+<h1>new officer.</h1>
+
+<form action="." method="POST" > {% csrf_token %}
+
+{{ form.as_p }}
+<input type="submit" value="add" />
+
+</form>
+
+officer list
+{% if officer_list %}
+    <ol>
+    {% for officer in officer_list %}
+        <li>
+            <a alt="more details about the officer" target="_blank" title="more details about {{ officer.sname }}" href="/pulse/pulse/{{ officer.officer_id }}/">{{ officer.sname }}, {{ officer.name }}</a>
+        </li>
+
+    {% endfor %}
+    </ol>
+
+{% else %}
+    <p>No officers are available.</p>
+{% endif %}

@@ -1,0 +1,27 @@
+{% extends 'pulse/base.htm' %}
+
+{% block content %}
+  {% if pb_details %}   
+  <h1>{{ pb_details.title }}</h1>
+  
+
+    {% if pbAss_details %} 
+    chronicle of assignment
+      <ul>
+      {% for pb in pbAss_details %}
+          <li>assigned to {{ pb.officer }} on {{ pb.date }} for {{ pb.stage }}</li>
+      {% endfor %}
+      </ul>
+    {% elif pbAss_details is None %}
+       <p>No assignment details are available for this project.</p>
+    {% else %}
+       <p>this project has not yet been assigned.</p>
+    {% endif %}
+
+  {% else %}
+     <p>project doesnt exist.</p>
+  {% endif %}
+
+  <a href="#" onclick="close_window();return false;">close</a><p>
+  <a href="../">back</a>
+{% endblock %}

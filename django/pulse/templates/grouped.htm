@@ -1,0 +1,109 @@
+{% extends 'pulse/base.htm' %}
+
+{% block content %}
+  <h1>title: {{ Briefs.title }}</h1>
+  grouped data
+  
+  <div class="row">
+      <div class="col-md-3">
+          {% if byYear %}
+            <table border=1>
+            <tr>
+                <td>year (enable drilldown by outcome)</td>
+                <td>frequency</td>
+            </tr>
+                   {% for year in byYear %}
+                      <tr>
+                            <td>{{ year.yearx }}</td>
+                            <td>{{ year.frequency }}</td>
+                      </tr>
+                   {% endfor %}
+            </table>
+          {% else %}
+             <p>No details are available.</p>
+          {% endif %}
+      </div>
+
+      <div class="col-md-3">
+          {% if sector %}
+          <table border=1>
+            <tr>
+                <td>sector (enable drilldown)</td>
+                <td>frequency</td>
+            </tr>
+                   {% for briefi in sector %}
+                      <tr>
+                            <td>{{ briefi.sector2 }}</td>
+                            <td>{{ briefi.frequency }}</td>
+                      </tr>
+                   {% endfor %}
+            </table>
+          {% else %}
+             <p>No details are available.</p>
+          {% endif %}
+      </div>
+
+      <div class="col-md-3">
+          {% if locations %}
+            <table border=1>
+            <tr>
+                <td>location (enable drilldown by sector)</td>
+                <td>frequency</td>
+            </tr>
+                   {% for brief in locations %}
+                      <tr>
+                            <td>{{ brief.locationx }}</td>
+                            <td>{{ brief.frequency }}</td>
+                      </tr>
+                   {% endfor %}
+            </table>
+          {% else %}
+             <p>No details are available.</p>
+          {% endif %}
+      </div>
+
+      <div class="col-md-3">
+          {% if category %}
+            <table border=1>
+            <tr>
+                <td>category</td>
+                <td>frequency</td>
+            </tr>
+                   {% for brief in category %}
+                      <tr>
+                            <td>{{ brief.category }}</td>
+                            <td>{{ brief.frequency }}</td>
+                      </tr>
+                   {% endfor %}
+            </table>
+          {% else %}
+             <p>No details are available.</p>
+          {% endif %}
+      </div>
+  </div><!--ends--row-->
+
+  <div class="row">
+        <div class="col-md-3">
+          {% if byDeveloper %}
+            <table border=1>
+            <tr>
+                <td>developer (drilldown 2show projects</td>
+                <td>frequency</td>
+                <td>sector</td>
+            </tr>
+                   {% for brief in byDeveloper %}
+                      <tr>
+                            <td>{{ brief.developer }}</td>
+                            <td>{{ brief.frequency }}</td>
+                            <td>{{ brief.sector }}</td>
+                      </tr>
+                   {% endfor %}
+            </table>
+          {% else %}
+             <p>No details are available.</p>
+          {% endif %}
+      </div>
+  </div><!--ends--row-->
+  <a href="../">close</a><p>
+  <a href="../">back</a>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'pulse/base.htm' %}
+
+{% block content %}
+
+  {% if officer_details %}   
+
+  <p>projects assigned to {{ officer_details.sname }}</p>
+
+    {% if pb_details %}
+        <ul>
+
+            {% for pb in pb_details %}
+               <li>{{ pb.project }} on {{ pb.date }}</li>
+            {% endfor %}
+
+        </ul>
+    {% endif %}
+
+  {% else %}
+
+     <p>No officer details are available.</p>
+  {% endif %}
+
+  <p>
+  <a href="#" onclick="close_window();return false;">close</a><p>
+  <a href="../">back</a>
+{% endblock %}

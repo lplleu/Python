@@ -1,0 +1,19 @@
+{% extends 'pulse/base.htm' %}
+
+{% block content %}
+
+<h1>capturing PB</h1>
+
+<form action="." method="POST" > {% csrf_token %}
+
+{{ form.as_p }}
+<h2>Do you want to delete the project "{{ object.title }} {{ object.locationx }} by {{ object.developer }}, ({{ object.reference }})"?</h2>
+<p>
+<input type="submit" value="Yes" />
+<a href='../'>cancel</a></p>
+
+</form>
+
+{% endblock %}
+
+{}

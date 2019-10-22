@@ -1,0 +1,25 @@
+
+
+<h1>assigning P.B.</h1>
+
+<form action="." method="POST" > {% csrf_token %}
+
+{{ form.as_p }}
+<input type="submit" value="assign" />
+
+</form>
+
+assignment list
+{% if assignment_list %}
+    <ol>
+    {% for ass in assignment_list %}
+        <li>
+            <a target="_blank" title="more details about {{ ass.project }}" href="/pulse/pulse/{{ ass.ass_id }}/">{{ ass.project }}, {{ ass.ass_id }}</a>
+        </li>
+
+    {% endfor %}
+    </ol>
+
+{% else %}
+    <p>No assignments are available.</p>
+{% endif %}

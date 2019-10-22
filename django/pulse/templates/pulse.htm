@@ -1,0 +1,506 @@
+{% extends 'pulse/base.htm' %}
+
+            <!-- Begin page content -->
+
+                    {% block content %}
+
+  <div class="row">
+    <div class="col-md-12">
+      <a href="django" class="top-menu">
+      <span class="glyphicon glyphicon-plus"></span>
+      </a>
+
+    </div><!--end-col12-->
+  </div><!--end-row-->
+
+  <div class="row">
+
+    <div class="col-md-8">
+         <div class="panel panel-default">
+              <div class="panel-heading">Environmental Education</div>
+              <div class="panel-body">
+                   <div class="well">
+                       <!-- Trigger the modal with a button -->
+                       <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                   </div>
+              </div>
+         </div><!--end-panel-->
+    </div><!--end-col-4-->
+
+    <div class="col-md-4">
+         <div class="panel panel-default">
+              <div class="panel-heading">Maun</div>
+              <div class="panel-body">
+                   <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#calendarModal">calendar</button>
+              </div>
+         </div><!--end-panel-->
+    </div><!--end-col-4-->
+
+  </div><!--end-row-->
+  
+  <div style='clear:both'></div>
+
+  <div class="row">
+      <div class="col-sm-12">
+        <p>Project Briefs</p>
+
+        {% if current_brief_list %}
+            <table id="example" class="display compact" style="width:100%">
+                <thead>
+                    <tr>
+                           <th align="left">title</th>
+                           <th>sector</th>
+                           <th>developer</th>
+                           <th>category</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+            {% for brieff in current_brief_list %}
+                <tr>
+                       <td><a alt="more details about the project" target="_blank" title="more details about {{ brieff.title }} {{ brieff.locationx }}" href="/pulse/pulse/{{ brieff.brief_id }}/">{{ brieff.title }} {{ brieff.locationx }}</a></td>
+                       <td>{{ brieff.sector }}</td>
+                       <td>{{ brieff.developer }}</td>
+                       <td>{{ brieff.category }}</td>
+
+                </tr>
+            {% endfor %}
+            </tbody></table>
+
+        {% else %}
+            <p>No briefs are available.</p>
+        {% endif %}
+
+
+      </div><!--ends-sm-12-->
+  </div><!--ends-row-->
+
+<div style='clear:both'><p></div>
+<div class="row">
+    <div class="col-md-8">
+    
+         <a href="../addOfficer/">add Officer</a> ,
+         <a href="../assignPB/">assign PB</a>
+
+    </div><!--end-col-8-->
+    <div class="col-md-4">
+         <!-- Trigger the modal with a button -->
+         <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#projectBriefModal">add PB</button>
+         <a data-toggle="modal" href="http://localhost:8000/pulse/acknowledge/" data-target="#projectBriefModal">add PB</a>
+    </div><!--end-col-4-->
+
+</div><!--ends-row-->
+<div style='clear:both'><p></div>
+<div class="row">
+    <div class="col-md-8">
+
+         <a href="officer/1/">view Officer</a> ,
+         <a href="pb/2/">view PB</a>
+
+    </div><!--end-col-8-->
+    <div class="col-md-4">
+         &nbsp;
+    </div><!--end-col-4-->
+</div><!--ends-row-->
+
+<div style='clear:both'><p></div>
+
+
+
+
+<div class="row">
+     <div class="col-md-4">
+     <div id="container5" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+          <table style="display:none;" align="center" border=1 id="datatable5">
+                 <thead>
+                   <tr>
+                       <th>Officer</th>
+                       <th>Frequency</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                        <tr>
+                            <td>Agriculture</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>Tourism</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>Mining</td>
+                            <td>34</td>
+                        </tr>
+                        <tr>
+                            <td>Residential</td>
+                            <td>13</td>
+                        </tr>
+                 </tbody>
+          </table>
+     </div>
+
+
+     <div class="col-md-4">
+     <div id="container6" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+          <table style="display:none;" border=1 id="datatable6">
+                 <thead>
+                   <tr>
+                       <th>Consultant</th>
+                       <th>Frequency</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                        <tr>
+                            <td>Maun</td>
+                            <td>34</td>
+                        </tr>
+                        <tr>
+                            <td>NG12</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>Gumare</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>Matlapana</td>
+                            <td>13</td>
+                        </tr>
+                 </tbody>
+          </table>
+     </div>
+
+     <div class="col-md-4">
+     <div id="container7" style="min-width: 310px; height: 400px; margin: 0 auto">2</div>
+          <table style="display:none;" border=1 id="datatable7">
+                 <thead>
+                   <tr>
+                       <th>Project</th>
+                       <th>Progress, %</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                        <tr>
+                            <td>Maun</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>NG12</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>Gumare</td>
+                            <td>34</td>
+                        </tr>
+                        <tr>
+                            <td>Matlapana</td>
+                            <td>13</td>
+                        </tr>
+                 </tbody>
+          </table>
+     </div>
+
+</div><!--ends-row-->
+<div class="row">
+
+     <div class="col-md-6">
+     <div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto">3</div>
+          <table style="display:none;" border=1 id="datatable2">
+                 <thead>
+                   <tr>
+                       <th>Year</th>
+                       <th>Frequency</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                        <tr>
+                            <td>2009</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>2010</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>2011</td>
+                            <td>34</td>
+                        </tr>
+                        <tr>
+                            <td>2012</td>
+                            <td>13</td>
+                        </tr>
+                 </tbody>
+          </table>
+     </div>
+
+     <div class="col-md-6">
+     <div id="container1" style="min-width: 310px; height: 400px; margin: 0 auto">4</div>
+          <table style="display:none;" border=1 id="datatable1">
+                 <thead>
+                   <tr>
+                       <th>Sector</th>
+                       <th>Frequency</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                        <tr>
+                            <td>Agriculture</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>Tourism</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>Mining</td>
+                            <td>34</td>
+                        </tr>
+                        <tr>
+                            <td>Residential</td>
+                            <td>13</td>
+                        </tr>
+                 </tbody>
+          </table>
+     </div>
+
+</div><!--ends-row-->
+
+<div style='clear:both'><p></div>
+
+
+ <div style='clear:both'>map</div>
+
+ <div style='clear:both'></div>
+ <p>
+
+<!-- Modal -->
+<div id="myModal" class="modal modal-lg fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        EE
+      </div>
+      <div class="modal-body">
+           EE stuff
+      </div><!--ends-modal-body-->
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="calendarModal" class="modal modal-xl  fade" role="dialog">       <!--modal-dialog-scrollable modal-dialog-centered-->
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+           <div id='calendar'></div>
+      </div><!--ends-modal-body-->
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="projectBriefModal" class="modal modal-xl fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+           
+           {% include 'pulse/captureAcknowledgement.htm' %}
+
+      </div><!--ends-modal-body-->
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="projectBriefModal3" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">                                                 
+        <h4 class="modal-title">Modal Header</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <ul class="nav nav-tabs">
+          <li class="active"><a class="active" data-toggle="tab" href="#home">Section A</a></li>
+          <li><a data-toggle="tab" href="#menu1">Section B</a></li>
+          <li><a data-toggle="tab" href="#menu2">Section C</a></li>
+          <li><a data-toggle="tab" href="#menu3">Section D</a></li>
+        </ul><!--ends-tabs-->
+        
+        <div class="tab-content">
+          <div id="home" class="tab-pane fade in active">
+            <h3>HOME</h3>
+            
+                       <form class="form-horizontal" action="/action_page.php"> 
+
+                             <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input id="email" type="text" class="form-control" name="email" placeholder="Title">
+                              </div>
+
+                             <div style='clear:both'></div>
+                             
+                             <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input id="email" type="text" class="form-control" name="email" placeholder="Cost">
+                              </div>
+
+                             <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input id="email" type="text" class="form-control" name="email" placeholder="Proponent">
+                              </div>
+
+                             <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input id="email" type="text" class="form-control" name="email" placeholder="Contact">
+                              </div>
+
+                          <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Title:</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="email" placeholder="e.g. Construction of Mall">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Cost:</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="email" placeholder="e.g. BWP 20,000.00">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Proponent:</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="email" placeholder="e.g. Mr. Moroko Mokwadi">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Contact:</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="email" placeholder="e.g. Mr Mokwadi Moroka">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Address:</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="email" placeholder="e.g. enviro@gov.bw">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Telephone:</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="email" placeholder="e.g. 6801237">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Fax:</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="email" placeholder="e.g. 6862503">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">email:</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="email" placeholder="e.g. name@example.com">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Location:</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="email" placeholder="e.g. Plot 11111 Sedie, Maun">
+                            </div>
+                          </div>
+                        </form>
+            
+              </div><!--ends--home-tab-->
+              <div id="menu1" class="tab-pane fade">
+                <h3>Menu 1</h3>
+                         <form class="form-horizontal" action="/action_page.php">
+                          <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Project details:</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="email" placeholder="e.g. Construction of Mall">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Project process:</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="email" placeholder="e.g. BWP 20,000.00">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Planning Issues:</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="email" placeholder="e.g. BWP 20,000.00">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                              <div class="checkbox">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+
+                            </div>
+                          </div>
+                        </form>
+
+              </div><!--ends--second-tab-->
+              <div id="menu2" class="tab-pane fade">
+                <h3>Impacts</h3>
+                 <div class="form-group">
+                    <label for="comment">Negative Impacts:</label>
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                 </div>  
+                 <div class="form-group">
+                    <label for="sel1">Select list:</label>
+                    <select class="form-control" id="sel1">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div> 
+              </div><!--ends--third-tab-->
+              <div id="menu3" class="tab-pane fade">
+                  <div class="input-group">
+                    <span class="input-group-addon">Text</span>
+                    <input id="msg" type="text" class="form-control" name="msg" placeholder="Additional Info">
+                  </div>
+              </div><!--ends--fourth-tab-->
+            </div><!--ends--tab-content-->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<center>
+
+</center>
+                    {% endblock %}
+
